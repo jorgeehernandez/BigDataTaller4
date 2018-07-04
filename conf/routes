@@ -1,0 +1,31 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Routes for managing users
+
+# Retrieve a user by an alternate attribute
+GET           /twitts/alt        controllers.Twitts.getByAlt()
+# Retrieve a user
+GET           /twitts/:id        controllers.Twitts.getById(id:String)
+
+# Retrieve a paginated list of users
+GET           /twitts            controllers.Twitts.list(p:Int ?= 1, ipp:Int ?= 50, q:Option[String], s:Option[String])
+
+# Create a user
+POST          /twitts            controllers.Twitts.create()
+POST          /test              controllers.Twitts.customCreate()
+
+# Update a user
+PUT           /twitts            controllers.Twitts.update()
+
+
+
+
+GET           /questions         controllers.Questions.list(p:Int ?= 1, ipp:Int ?= 50, q:Option[String], s:Option[String])
+POST          /questions         controllers.Questions.create()
+PUT           /questions         controllers.Questions.update()
+
+
+
+
